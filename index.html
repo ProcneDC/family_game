@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Ornitología</title>
+    </head>
+    <body>
+        <!-- Natujuegos -->
+        <div class="container-fluid bg-light">
+            <div class="row">
+            <div class="col-lg-8 offset-lg-2 navbar navbar-light ">
+                 <a class="navbar-brand" href="#">
+                    Natujuegos
+                </a>                      
+            </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row pt-5">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="row">
+                        <!-- Image -->
+                        <div class="col-lg-6 col-md-6" id="imageColumn">
+                            <figure>
+                                <img id="imagen" src=""/>
+                            </figure>
+                        </div>
+                        <div class="col-lg-6 col-md-6" id="imageColumn">
+                            <header>
+                                <h1>family game.</h1>
+                                <p>Un juego para estudiar ornitología para el final de Aves Argentinas.</p>
+                            </header>
+                            <hr>
+                            <div class="row" id="id_statusRow">
+                                <div class="col-sm-7 col-md-12 col-lg-7">
+                                    <p class="text-muted">
+                                        <span id="id_questionStatus">Pregunta <strong id="intentos"
+                                            ></strong> de <strong id="cantidad"></strong> (<span id="porcentaje"></span>%)</span><br>
+                                            <a class="text-danger" title="Terminar juego" data-toggle="modal" data-target="#resultsModal">Terminar juego</a>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-5 col-md-12 col-lg-5 answers-cell text-right">
+                                        <p class="text-muted">Respuestas:
+                                            <span class="text-success icon-answer"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> <strong data-bind="text:correct"><span id="bien"></span> %</strong></span>
+                                            <span class="text-danger icon-answer"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> <strong data-bind="text:wrong"><span id="mal"></span> %</strong></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group">
+                                    <label id="">Escribe el nombre de la familia del <text id="ave"></text>:
+                                    </label>
+                                    <div id="disappear">
+                                        <input  type="text" class="form-control"  id="input" placeholder="La familia es..."/>
+                                        
+                                        <button class="btn btn-info mt-2" onclick="submit()">Responder</button>
+                                    </div>
+                                    <p id="answer"></p>
+                                    <p id="button"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Fin del juego</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>¡Gracias por jugar! Este es tu resultado:</p><p>
+                        </p><div class="well" id="id_results">
+                        
+                        <div class="h4">
+                            <span class="text-muted">Preguntas respondidas:</span> <strong id="intentos"></strong> de <strong id="cantidad"></strong> (<span id="porcentaje"></span>%)
+                        </div>
+                        <div class="h4">
+                            <span class="text-muted">Respuestas:</span>
+                            <span class="text-success icon-answer"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> <strong id="bien"></strong></span>
+                            <span class="text-danger icon-answer"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> <strong id="mal"></strong></span>
+                        </div>
+                    </div>
+                    
+                    <p>Pasalo a tus compañeros, es más divertido estudiar jugando. <span class="br">Y si te gusto, ¡compartilo!</span></p>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <a href="index.html" class="btn btn-primary" title="Intentar de nuevo">Intentar de nuevo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-light fixed-bottom">
+        <div class="row">
+        <div class="col-lg-8 offset-lg-2 navbar navbar-light justify-content-center">
+        <span class="text-muted">Las imágenes utilizadas son para uso educativo. Contacto: procne@riseup.net</span>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<script>
+        var aves = ["Martín pescador", "Hornero", "Picaflor", "Carancho", "Ratona", "Benteveo", "Calandria", "Vencejo de cascada", "Lechuza del campanario", "Tordo músico", "Golondrina", "Pinguino", "Gallineta", "Pirincho", "Aguatero", "Espátula", "Carpintero real", "Cardenal común", "Flamenco", "Pato común"];
+        var familias = ["Alcedinidae", "Furnariidae", "Trochilidae", "Falconidae", "Troglodytidae", "Tyrannidae", "Mimidae",  "Apodidae", "Tytonidae", "Icteridae", "Hirundinidae", "Sphenisidae", "Rallidae",  "Cuculidae", "Rostratulidae", "Thresquiornitidae", "Picidae", "Thraupidae", "Phoenicopteridae", "Anatidae"];
+        var orden = [ "Coraciiformes", "Passeriformes", "Apodiformes", "Falconiformes", "Passeriformes", "Passeriformes", "Passeriformes", "Apodiformes", "Strigiformes", "Passeriformes", "Passeriformes", "Sphenisiformes", "Gruiforme", "Cuculiformes", "Charadriformes", "Ciconiformes", "Piciformes", "Passeriformes", "Phoenicopteriformes", "Anseriformes"];
+        var fotos = ["001.jpg", "002.jpg", "003.jpg", "004.jpg", "005.jpg", "006.jpg", "007.jpg", "008.jpg", "009.jpg", "010.jpg", "011.jpg", "012.jpg", "013.jpg", "014.jpg", "015.jpg", "016.jpg", "017.jpg", "018.jpg", "019.jpg", "020.jpg" ];
+        var random = Math.floor(Math.random() * aves.length);
+        var cantidad = aves.length;
+        var intentos = 1;
+        var bien = 0;
+    	var mal = 0;
+        var porcentaje = (intentos*100) / cantidad;
+
+	    document.getElementById("cantidad").innerHTML = cantidad;
+	    document.getElementById("intentos").innerHTML = intentos;
+        document.getElementById("porcentaje").innerHTML = porcentaje;
+        document.getElementById("bien").innerHTML = bien;
+        document.getElementById("mal").innerHTML = mal;
+
+        document.getElementById("ave").innerHTML = aves[random];
+
+
+	    var imagen = "img/" + fotos[random];
+	    document.getElementById("imagen").setAttribute("src", imagen);
+
+
+        function submit() {
+            var b = input.value;
+
+            if (b == familias[random]) {
+
+                document.getElementById("answer").innerHTML = "Bien! Acertaste!";
+                document.getElementById("button").innerHTML = "<button onclick=btn()>Next</button>";
+                document.getElementById("button").children[0].setAttribute("id", "next")
+                document.getElementById("next").setAttribute("class", "btn btn-info mt-2");
+
+				document.getElementById("disappear").innerHTML = "";
+            	bien = bien + 1;
+        		document.getElementById("bien").innerHTML = bien;
+
+            }
+
+            else {
+                var respuesta = "Sigue estudiando! La respuesta correcta es " +  familias[random] ;
+                document.getElementById("answer").innerHTML = respuesta;
+                document.getElementById("button").innerHTML = "<button onclick=btn()>Next</button>";
+                document.getElementById("button").children[0].setAttribute("id", "next")
+                document.getElementById("next").setAttribute("class", "btn btn-info mt-2");
+
+                document.getElementById("disappear").innerHTML = "";
+            	mal = mal + 1;
+        		document.getElementById("mal").innerHTML = mal;
+
+            }
+        }
+
+
+
+        function btn() {
+            random = Math.floor(Math.random() * aves.length);
+            document.getElementById("ave").innerHTML = aves[random];
+
+            document.getElementById("button").innerHTML = "";
+            document.getElementById("disappear").innerHTML = "<input type=text id=input /><button onclick=submit()>Responder</button>";
+ 
+            document.getElementById("input").nextSibling.setAttribute("id", "submit")
+            document.getElementById("submit").setAttribute("class", "btn btn-info mt-2");            
+
+            document.getElementById("input").setAttribute("class", "form-control");
+
+            document.getElementById("answer").innerHTML = "";
+
+            intentos = intentos + 1;
+            document.getElementById("intentos").innerHTML = intentos;
+
+            var intentosactualizados = intentos + 1;
+
+            porcentaje = (intentosactualizados*100)/cantidad;
+            document.getElementById("porcentaje").innerHTML = porcentaje;
+
+            bien = (bien*100)/cantidad;
+            document.getElementById("porcentaje").innerHTML = bien;
+
+            mal = (mal*100)/cantidad;
+            document.getElementById("porcentaje").innerHTML = mal;
+
+		    var imagen = "img/" + fotos[random];
+		    document.getElementById("imagen").setAttribute("src", imagen);
+
+
+        }
+    </script>		
+	</body>
+</html>
